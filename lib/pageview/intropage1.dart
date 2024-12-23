@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hydrahub/pageview/intropage2.dart';
 
 class IntroPage1 extends StatefulWidget {
   const IntroPage1({super.key});
@@ -9,6 +8,8 @@ class IntroPage1 extends StatefulWidget {
 }
 
 class _IntroPage1State extends State<IntroPage1> {
+  final PageController _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -90,7 +91,7 @@ class _IntroPage1State extends State<IntroPage1> {
                       ),
                       child: GestureDetector(
                         onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => IntroPage2(),));
+                          _controller.jumpToPage(1);
                         },
                           child: Icon(Icons.arrow_forward_ios_outlined)),
 

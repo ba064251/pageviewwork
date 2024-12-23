@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../pageview/intropage1.dart';
+import 'package:hydrahub/pageview/PageView.dart';
 
-class Splashscreen extends StatefulWidget {
-  const Splashscreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<Splashscreen> createState() => _SplashscreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashscreenState extends State<Splashscreen> {
+class _SplashScreenState extends State<SplashScreen> {
 
 
   @override
@@ -23,7 +23,7 @@ class _SplashscreenState extends State<Splashscreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const IntroPage1()),
+        MaterialPageRoute(builder: (context) =>  const PageViewScreen()),
       );
     });
   }
@@ -31,14 +31,14 @@ class _SplashscreenState extends State<Splashscreen> {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
+    return const PopScope(
       canPop: false,
       child: SafeArea(
         child: Scaffold(
             body: Center(
               child: Stack(
                 children: [
-                  Container(
+                  SizedBox(
                       height: 300,
                       width: 300,
                       child: Image(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hydrahub/OnBoarding/SplashScreen.dart';
-import 'package:hydrahub/pageview/intropage1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Splashscreen(),
+      home: const SplashScreen(),
     );
   }
 }

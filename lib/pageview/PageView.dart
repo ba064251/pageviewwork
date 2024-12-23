@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hydrahub/OnBoarding/SplashScreen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../HomeScreens/HomeScreen.dart';
@@ -10,15 +9,15 @@ import 'intropage2.dart';
 import 'intropage3.dart';
 
 
-class Page_View extends StatefulWidget {
-  const Page_View({super.key});
+class PageViewScreen extends StatefulWidget {
+  const PageViewScreen({super.key});
 
   @override
-  State<Page_View> createState() => _Page_ViewState();
+  State<PageViewScreen> createState() => _PageViewScreenState();
 }
 
-class _Page_ViewState extends State<Page_View> {
-  PageController _controller=PageController();
+class _PageViewScreenState extends State<PageViewScreen> {
+  final PageController _controller = PageController();
   bool lastpage=false;
 
  /* void OneTimeScreen()async{
@@ -40,7 +39,7 @@ class _Page_ViewState extends State<Page_View> {
                 lastpage=(index==2);
               });
           },
-          children:[
+          children:const [
             IntroPage1(),
             IntroPage2(),
             IntroPage3(),
@@ -59,7 +58,7 @@ class _Page_ViewState extends State<Page_View> {
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Icon(Icons.arrow_forward_ios_outlined),
+                        child: const Icon(Icons.arrow_forward_ios_outlined),
 
                       ),
                 ),
@@ -67,16 +66,20 @@ class _Page_ViewState extends State<Page_View> {
           Positioned(
               top: 20,
               right: 20,
-              child:Text('Skip',style: TextStyle(fontFamily: 'Zolina',fontSize: 14),)),
+              child:GestureDetector(
+                  onTap:(){
+                    _controller.jumpToPage(2);
+                  },
+                  child: const Text('Skip',style: TextStyle(fontFamily: 'Zolina',fontSize: 14),))),
           Container(
-            margin: EdgeInsets.only(top: 320),
-            alignment: Alignment(-0.75,0.25),
+            margin: const EdgeInsets.only(top: 320),
+            alignment: const Alignment(-0.75,0.25),
               child: Column(
                 children: [
                  lastpage ? ElevatedButton(
                      style: ElevatedButton.styleFrom(
                          backgroundColor: Colors.grey.shade400,
-                         side: BorderSide(
+                         side: const BorderSide(
                              width: 1,
                              color:Color(0xC2FFE033)
                          ),
@@ -85,7 +88,7 @@ class _Page_ViewState extends State<Page_View> {
                          )
                      ),
                      onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
                      },
                      child: Padding(
                        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
@@ -104,13 +107,13 @@ class _Page_ViewState extends State<Page_View> {
                         )
                       ),
                       onPressed: (){
-                    _controller.nextPage(duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+                    _controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
                   },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                         child:CustomText(text: 'Skip', size: 16, fontWeight: FontWeight.w400,color: Colors.white,),
                       )),
-                  SizedBox(height: 8,),
+                  const SizedBox(height: 8,),
                   SmoothPageIndicator(
                       controller: _controller,
                       count: 3,

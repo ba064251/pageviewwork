@@ -44,7 +44,7 @@ class _IntroPage3State extends State<IntroPage3> {
               ),
             ),
             // Text at the bottom
-            Positioned(
+            const Positioned(
                 top: 20,
                 right: 20,
                 child:Text('Skip',style: TextStyle(fontFamily: 'Zolina',fontSize: 14),)),
@@ -55,7 +55,7 @@ class _IntroPage3State extends State<IntroPage3> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                       'Choose',
                       style: TextStyle(
@@ -66,8 +66,8 @@ class _IntroPage3State extends State<IntroPage3> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 8,),
-                  Center(
+                  const SizedBox(height: 8,),
+                  const Center(
                     child: Text(
                       'Beauty Products',
                       style: TextStyle(
@@ -78,9 +78,9 @@ class _IntroPage3State extends State<IntroPage3> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Center(
-                    child: ElevatedButton(onPressed: (){}, child: Container( width:40,height:40,decoration: BoxDecoration(),)),
+                    child: ElevatedButton(onPressed: (){}, child: Container( width:40,height:40,decoration: const BoxDecoration(),)),
                   ),
                 ],
               ),

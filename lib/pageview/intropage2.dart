@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hydrahub/pageview/intropage3.dart';
 
 class IntroPage2 extends StatefulWidget {
   const IntroPage2({super.key});
@@ -9,6 +8,8 @@ class IntroPage2 extends StatefulWidget {
 }
 
 class _IntroPage2State extends State<IntroPage2> {
+  final PageController _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
@@ -52,7 +53,7 @@ class _IntroPage2State extends State<IntroPage2> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                       'Choose',
                       style: TextStyle(
@@ -63,8 +64,8 @@ class _IntroPage2State extends State<IntroPage2> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 8,),
-                  Center(
+                  const SizedBox(height: 8,),
+                  const Center(
                     child: Text(
                       'Beauty Products',
                       style: TextStyle(
@@ -75,7 +76,7 @@ class _IntroPage2State extends State<IntroPage2> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Center(
                     child: Container(
                       width: 80,
@@ -87,10 +88,9 @@ class _IntroPage2State extends State<IntroPage2> {
                       ),
                       child: GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => IntroPage3(),));
-
+                          _controller.jumpToPage(2);
                         },
-                          child: Icon(Icons.arrow_forward_ios_outlined)),
+                          child: const Icon(Icons.arrow_forward_ios_outlined)),
 
                     ),
 
